@@ -1,0 +1,25 @@
+@import "styles/breakpoints";
+@import "styles/colors";
+
+.footerContainer {
+  background-color: #c5c5c5;
+  height: 120px;
+  display: flex;
+  align-items: center;
+
+  div {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-size: 1.1em;
+      strong {
+        font-weight: 700;
+        color: $blue-default;
+      }
+    }
+  }
+}

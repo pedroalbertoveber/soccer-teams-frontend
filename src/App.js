@@ -1,3 +1,4 @@
+import Footer from "components/Footer/index";
 import Header from "components/Header/index";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -8,9 +9,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path={"/"} element={<Home />} /> 
-      </Routes>
+      <main className="containerDefault">
+        <Routes>
+          <Route path={"/"} element={<Home />} /> 
+        </Routes>
+      </main>
+      <Footer />
     </BrowserRouter>
   );
 };

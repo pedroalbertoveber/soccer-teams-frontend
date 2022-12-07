@@ -1,9 +1,16 @@
-import styles from "./Header.module.scss";
+/* external modules */
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+/* assets */
 import Logo from "assets/img/logo.png";
+
+/* icons */
 import { BiMenu } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
-import { useState } from "react";
+
+/* styles */
+import styles from "./Header.module.scss";
 
 const Header = () => {
 
