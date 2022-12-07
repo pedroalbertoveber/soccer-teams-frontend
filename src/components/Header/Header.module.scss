@@ -1,0 +1,144 @@
+@import "styles/colors.scss";
+@import "styles/breakpoints.scss";
+
+.headerContainer {
+  background-color: $black-default;
+  width: 100%;
+
+  .container {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+
+    nav, figure {
+      width: 33%;
+    }
+
+    .mainNavBar ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      li a {
+        color: #fff;
+        font-size: 1em;
+        font-weight: 600;
+      }
+
+      li:hover > a {
+        color: #e2e2e2;
+      }
+    }
+
+    figure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 100px;
+      }
+    }
+
+    .navBar ul {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      li {
+        margin-left: 2em;
+        &:first-child {
+          margin: 0;
+        }
+
+        a {
+          font-size: 1em;
+          font-weight: 600;
+          color: #fff;
+        }
+      }
+
+      li:hover > a {
+        color: #e2e2e2;
+      }
+    }
+
+    .toggleMenu {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $mobile-devices) {
+    .container {
+      padding: 1.2em $padding-mobile;
+    }
+    .container figure img {
+      width: 80px;
+    }
+  }
+
+  @media screen and (max-width: $smart-phones) {
+    .container {
+      .mainNavBar {
+        display: none;
+      }
+  
+      .navBar {
+        display: none;
+      }
+  
+      figure {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .toggleMenu {
+        display: block;
+        position: absolute;
+        right: 40px;
+        cursor: pointer;
+
+        &:hover > svg {
+          color: #e2e2e2;
+        }
+      }
+    }
+  }
+}
+
+.mobileMenu {
+  display: none;
+
+  @media screen and (max-width: $mobile-devices) {
+    width: 100%;
+    display: block;
+    position: absolute;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #353535;
+
+      li {
+        padding: 15px 0;
+        border-top: 1px solid #fff;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+          color: #e2e2e2;
+        }
+      }
+    }
+  }
+}
