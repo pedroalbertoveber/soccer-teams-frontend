@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Alemanha",
+    "league": "Bundesliga"
+  },
+  {
+    "id": 2,
+    "name": "Brasil",
+    "league": "Brasileirão"
+  },
+  {
+    "id": 3,
+    "name": "Espanha",
+    "league": "LaLiga"
+  },
+  {
+    "id": 4,
+    "name": "Itália",
+    "league": "Campeonato Italiano"
+    
+  },
+  {
+    "id": 5,
+    "name": "Portugal",
+    "league": "Liga Portugal"
+  },
+  {
+    "id": 6,
+    "name": "Holanda",
+    "league": "Eredivisie"
+
+  },
+  {
+    "id": 7,
+    "name": "Inglaterra",
+    "league": "Premier Ligue"
+  },
+  {
+    "id": 8,
+    "name": "França",
+    "league": "Ligue 1"
+  }
+]

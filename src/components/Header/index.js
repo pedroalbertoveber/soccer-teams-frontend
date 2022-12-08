@@ -1,9 +1,12 @@
 /* external modules */
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 /* assets */
 import Logo from "assets/img/logo.png";
+
+/* contexts */
+import { AuthContext } from "context/AuthContext";
 
 /* icons */
 import { BiMenu } from "react-icons/bi";
@@ -15,6 +18,7 @@ import styles from "./Header.module.scss";
 const Header = () => {
 
   const [ isOpenMenu, setIsOpenMenu ] = useState(false);
+  const { isLogged, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
 
   return (
@@ -26,6 +30,10 @@ const Header = () => {
             <li>
               <Link to={"/"}>Home</Link>
             </li>
+            {isLogged &&             
+            <li onClick={logOut}>
+              LogOut
+            </li>}
           </ul>
         </nav>
         <figure>
@@ -36,12 +44,25 @@ const Header = () => {
             <li>
               <Link to={"/teams"}>Clubes</Link>
             </li>
-            <li>
-              <Link to={"/login"}>Login</Link>
-            </li>
-            <li>
-              <Link to={"/register"}>Registrar</Link>
-            </li>
+            {isLogged ? (            
+            <>
+              <li>
+                <Link to={"/players/myplayers"}>Jogadores</Link>
+              </li>
+              <li>
+                <Link to={"/loan"}>Empréstimos</Link>
+              </li>
+            </>
+            ) : (
+            <>
+              <li>
+                <Link to={"/login"}>Login</Link>
+              </li>
+              <li>
+                <Link to={"/register"}>Registrar</Link>
+              </li>
+            </>
+            )}
           </ul>
         </nav>
         <div className={styles.toggleMenu} onClick={() => setIsOpenMenu(!isOpenMenu)}>

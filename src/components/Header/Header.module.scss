@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em;
+    padding: 1em $padding-default;
 
     nav, figure {
       width: 33%;
@@ -30,6 +30,17 @@
 
       li:hover > a {
         color: #e2e2e2;
+      }
+
+      li:first-child {
+        margin-right: 1em;
+      }
+
+      li {
+        color: #fff;
+        font-size: .8em;
+        font-weight: 600;
+        cursor: pointer;
       }
     }
 
@@ -55,7 +66,7 @@
         }
 
         a {
-          font-size: 1em;
+          font-size: .8em;
           font-weight: 600;
           color: #fff;
         }

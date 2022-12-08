@@ -1,0 +1,8 @@
+[
+  { "id": 1 , "name": "Goleiro" },
+  { "id": 2 , "name": "Zagueiro" },
+  { "id": 3 , "name": "Lateral" },
+  { "id": 4 , "name": "Volante" },
+  { "id": 5 , "name": "Meio-Campista" },
+  { "id": 6 , "name": "Atacante" }
+]
