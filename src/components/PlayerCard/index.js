@@ -7,9 +7,22 @@ import { useNavigate } from "react-router-dom";
 /* components */
 import ImageDefault from "components/ImageDefault/index";
 
-const PlayerCard = ({ name, age, id, position, img, team }) => {
+const PlayerCard = ({ name, age, id, position, img, team, borrower, type, available }) => {
 
   const navigate = useNavigate();
+  let inNegociation;
+  let loanPlayer;
+
+  if (type === "my-players" && borrower && available === false) {
+    loanPlayer = true;
+    inNegociation = false;
+  } else if (type === "my-players" && borrower && available === true) {
+    loanPlayer = false;
+    inNegociation = true;
+  } else {
+    loanPlayer = false;
+    inNegociation = false;
+  }
 
   return (
     <div onClick={() => navigate(`/players/${id}`)} className={styles.playerContainer}>
@@ -20,6 +33,16 @@ const PlayerCard = ({ name, age, id, position, img, team }) => {
         <p>Posição: <strong>{position}</strong></p>
         <p>Clube: <strong>{team}</strong></p>
       </figcaption>
+      { loanPlayer && (
+        <div className={styles.loanRequest}>
+          Empréstimo Finalizado
+        </div>
+      )}
+      { inNegociation && (
+        <div className={styles.loanRequest}>
+          Clube Interessado
+        </div>
+      )}
     </div>
   );
 };

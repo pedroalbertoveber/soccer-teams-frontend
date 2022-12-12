@@ -18,7 +18,7 @@ body {
   padding: 2em 100px 4em;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1000px) {
   .containerDefault {
     padding: 2em 40px 4em;
   }

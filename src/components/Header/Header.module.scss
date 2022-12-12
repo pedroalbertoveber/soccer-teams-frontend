@@ -32,15 +32,12 @@
         color: #e2e2e2;
       }
 
-      li:first-child {
-        margin-right: 1em;
-      }
-
       li {
         color: #fff;
         font-size: .8em;
         font-weight: 600;
         cursor: pointer;
+        margin-right: 1em;
       }
     }
 
@@ -128,6 +125,7 @@
     width: 100%;
     display: block;
     position: absolute;
+    z-index: 1;
 
     ul {
       width: 100%;

@@ -1,0 +1,68 @@
+@import "styles/breakpoints";
+@import "styles/colors";
+
+.infoContainer {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #fff;
+
+  figure {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid $black-default;
+
+    img {
+      width: 380px;
+      height: 380px;
+      object-fit: cover;
+    }
+  }
+
+  figcaption {
+    padding: 1em 2em;
+    background-color: #fff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 6px 6px 0;
+    justify-content: flex-start;
+    display: block;
+    
+    h4 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    p {
+      margin-bottom: 1em;
+      font-size: 1.2em;
+    }
+  }
+
+  @media screen and (max-width: $smart-phones) {
+    flex-direction: column;
+    align-items: center;
+
+    figure {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-bottom: 1px solid $black-default;
+      padding: 1em 0;
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+      }
+    }
+
+    figcaption {
+      width: 100%;
+    }
+  }
+}

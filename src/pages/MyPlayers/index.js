@@ -1,6 +1,6 @@
 /* external modules */
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 /* api */
@@ -18,7 +18,6 @@ const MyPlayers = () => {
 
   const [ players, setPlayers ] = useState([]);
   const [ token ] = useState(localStorage.getItem("token") || "");
-  const navigate = useNavigate();
 
   useEffect(() => {
     api.get("/players/teamplayers", {
@@ -34,14 +33,15 @@ const MyPlayers = () => {
       toast.error(err.response.data.message);
       return err;
     });
-  }, []);
+  }, [ token ]);
+
 
   return (
     <section className={defaultStyles.defaultContainer}>
       <div className={defaultStyles.pageHeader}>
         <h2>Meus Jogadores</h2>
       </div>
-      {players == undefined ? (
+      {players === undefined ? (
         <div className={styles.noPlayers}>
           <span>Você ainda não tem nenhum jogador cadastrado!</span>
           <p>Cadastre seu primeiro jogador: <Link to={"/players/add"}>Clique aqui</Link></p>
@@ -56,6 +56,9 @@ const MyPlayers = () => {
             age={player.age}
             id={player._id}
             position={player.position}
+            available={player.available}
+            borrower={player.borrower}
+            type={"my-players"}
             img={`http://localhost:5000/images/players/${player.image}`}
           />
         ))}

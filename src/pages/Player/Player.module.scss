@@ -1,0 +1,139 @@
+@import "styles/breakpoints";
+@import "styles/colors";
+
+.answerRequest {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 1em;
+  background-color: #fff;
+  width: 100%;
+
+  figure {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 2em;
+      width: 30%;
+      min-width: 150px;
+      padding: 10px;
+      border: 0;
+      border-radius: 6px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:first-child {
+        background-color: $green-default;
+        &:hover {
+          background-color: $green-dark;
+        }
+      }
+
+      &:last-child {
+        background-color: $red-default;
+        &:hover {
+          background-color: $red-dark;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $smart-phones) {
+      flex-direction: column;
+      align-items: center;
+
+      figure {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        img {
+          width: 200px;
+          height: 200px;
+          margin-bottom: 1em;
+        }
+
+        h4 {
+          font-size: 1.5em;
+        }
+      }
+
+      div {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        margin: 2em 0 1em;
+        
+
+        button {
+          width: 100%;
+          margin: .5em 0;
+        }
+      }
+  }
+}
+
+.concludeLoan {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 10px 1em;
+  border-radius: 6px;
+
+  .iconContainer {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 15px;
+      font-size: 2em;
+      color: $green-default;
+    }
+  }
+
+  .borrowerInfo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.success {
+  background-color: $green-default;
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+
+  strong {
+    font-size: 1.2em;
+    color: #fff;
+  }
+}

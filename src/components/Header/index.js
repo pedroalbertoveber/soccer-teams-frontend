@@ -30,10 +30,16 @@ const Header = () => {
             <li>
               <Link to={"/"}>Home</Link>
             </li>
-            {isLogged &&             
+            {isLogged &&  
+            <>
             <li onClick={logOut}>
               LogOut
-            </li>}
+            </li>
+            <li>
+              <Link to={"/teams/myteam"}>Meu Time</Link>
+            </li>
+            </>           
+            }
           </ul>
         </nav>
         <figure>
@@ -50,7 +56,7 @@ const Header = () => {
                 <Link to={"/players/myplayers"}>Jogadores</Link>
               </li>
               <li>
-                <Link to={"/loan"}>Empréstimos</Link>
+                <Link to={"/players/loanrequests"}>Empréstimos</Link>
               </li>
             </>
             ) : (
@@ -85,18 +91,50 @@ const Header = () => {
           }}>
             Clubes
           </li>
-          <li onClick={() => {
-            setIsOpenMenu(false);
-            navigate("/login");
-          }}>
-            Login
-          </li>
-          <li onClick={() => {
-            setIsOpenMenu(false);
-            navigate("/register");
-          }}>
-            Registrar
-          </li>
+          {isLogged ? (
+            <>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                navigate("/players/myplayers");
+              }}>
+                Jogadores
+              </li>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                navigate("/teams/myteam");
+              }}>
+                Meu Time
+              </li>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                navigate("/players/loanrequests");
+              }}>
+                Empréstimos
+              </li>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                logOut();
+                navigate("/");
+              }}>
+                LogOut
+              </li>
+            </>
+          ) : (
+            <>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                navigate("/login");
+              }}>
+                Login
+              </li>
+              <li onClick={() => {
+                setIsOpenMenu(false);
+                navigate("/register");
+              }}>
+                Registrar
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     )}
